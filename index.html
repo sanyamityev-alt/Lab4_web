@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №4 - Варіант 8</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="student-info">Студент: Мітяєв Олександр <span id="header-student-name"></span> | Група:ТР-43 <span id="header-group"></span></div>
+        <h1>ВАРІАНТ 8: DOM: МАНІПУЛЯЦІЇ З ЕЛЕМЕНТАМИ ТА АТРИБУТАМИ</h1>
+    </header>
+
+    <main>
+        <section id="login-screen" class="screen active">
+            <h2>Реєстрація на тест</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">ПІБ Студента:</label>
+                    <input type="text" id="username" required minlength="5" placeholder="Іванов Іван Іванович">
+                </div>
+                <div class="form-group">
+                    <label for="group">Група:</label>
+                    <input type="text" id="group" required pattern="[А-Яа-яІіЇїЄє]{2,4}-\d{2}" placeholder="ТР-43">
+                    <small>Формат: ТР-43</small>
+                </div>
+                <div class="form-group">
+                    <label for="difficulty">Рівень складності:</label>
+                    <select id="difficulty">
+                        <option value="easy">Початковий</option>
+                        <option value="medium">Середній</option>
+                        <option value="hard">Складний</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn primary">Почати тест</button>
+            </form>
+        </section>
+
+        <section id="quiz-screen" class="screen hidden">
+            <div class="quiz-header">
+                <span>Питання <span id="current-question-num">1</span> з <span id="total-questions">10</span></span>
+                <span id="timer">Час: 00:00</span>
+            </div>
+            <div id="question-container">
+                </div>
+            <div class="controls">
+                <button id="next-btn" class="btn primary">Наступне питання</button>
+            </div>
+        </section>
+
+        <section id="result-screen" class="screen hidden">
+            <h2>Результати тестування</h2>
+            <div class="score-card">
+                <p>Студент: <span id="res-name"></span></p>
+                <p>Група: <span id="res-group"></span></p>
+                <p>Рівень: <span id="res-level"></span></p>
+                <h3>Ваш результат: <span id="score-val">0</span> / <span id="max-score">0</span></h3>
+                <p id="grade-message"></p>
+            </div>
+            <button id="restart-btn" class="btn secondary">Пройти ще раз</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Лабораторна робота №4. JavaScript DOM.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
